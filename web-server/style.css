@@ -1,0 +1,40 @@
+*
+{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+body, html
+{
+	padding: 3px 3px 3px 3px;
+	background-color: #ddd;
+	font-family: Verdana, sans-serif;
+	font-size: 11pt;
+	text-align: center;
+}
+p.red, p.green
+{
+	margin-top: 20px;
+}
+p.red
+{
+	color: red;
+}
+p.green
+{
+	color: green;
+}
+#pc-status
+{
+	font-size: 72px;
+	color: lightgoldenrodyellow;
+	margin-top: 40px;
+	text-shadow: 0 2px 8px rgba(216, 137, 61, 0.9);
+}
+div#loader
+{
+	display: none;
+	margin: 80px auto;
+	width: 100px;
+	height: 100px;
+	background: url('images/loader.gif');
+}
