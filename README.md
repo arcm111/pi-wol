@@ -1,3 +1,3 @@
 # pi-wol
 
-![circuit diagram][imgs/circuit(1).svg]
+![circuit diagram](imgs/circuit.svg)
