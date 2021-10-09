@@ -32,3 +32,10 @@ Wake up diveces connected to your local network from anywhere using Raspberry Pi
 For more information about Pi 2 Model B pins mapping check:
 [Raspberry Pi 2 Model B Pinout](https://learn.sparkfun.com/tutorials/raspberry-gpio/all)
 
+## Web Server
+Provides a user interface over the web to send wol requests to Raspberry Pi.
+### Requirements:
+* A running http server such as Apache.
+* A compiled wol-cli binary added to web server directory with the name "wol".
+
+
