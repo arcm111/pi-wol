@@ -21,13 +21,15 @@ Wake up diveces connected to your local network from anywhere using Raspberry Pi
 * pthread
 
 ## WiringPi Pins Mapping:
-* GPIO04 -> 7
-* GPIO05 -> 21
-* GPIO06 -> 22
-* GPIO17 -> 0
-* GPIO22 -> 3
-* GPIO26 -> 25
-* GPIO27 -> 2
+Pi Pin   | wiringPi
+-------- | --------
+* GPIO04 | 7
+* GPIO05 | 21
+* GPIO06 | 22
+* GPIO17 | 0
+* GPIO22 | 3
+* GPIO26 | 25
+* GPIO27 | 2
 
 For more information about Pi 2 Model B pins mapping check:
 [Raspberry Pi 2 Model B Pinout](https://learn.sparkfun.com/tutorials/raspberry-gpio/all)
