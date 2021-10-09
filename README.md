@@ -1,6 +1,8 @@
 # pi-wol
 Wake up diveces connected to your local network from anywhere using Raspberry Pi.
 
+![circuit diagram](imgs/circuit.svg)
+
 ## Buttons
 * Button [GPIO17]: Enables/disables the board
 * Button [GPIO27]: Powers off the operating system.
@@ -20,4 +22,3 @@ Wake up diveces connected to your local network from anywhere using Raspberry Pi
 
 [Raspberry Pi 2 Model B Pinout](https://learn.sparkfun.com/tutorials/raspberry-gpio/all)
 
-![circuit diagram](imgs/circuit.svg)
