@@ -1,4 +1,5 @@
 # pi-wol
+Wake up diveces connected to your local network from anywhere using Raspberry Pi.
 
 ## Buttons
 * Button [GPIO17]: Enables/disables the board
@@ -10,8 +11,12 @@
 * LED [GPIO05]: Indicates that a wol request has been received.
 * LED [GPIO26]: Indicates an error.
 
-required libraries:
-wiringPi
+## Other Pins
+* GPIO06: Connected to a pull-up resistor and used to check if the board is connected to the device or not.
+
+## Required Libraries:
+* wiringPi
+* pthread
 
 [Raspberry Pi 2 Model B Pinout](https://learn.sparkfun.com/tutorials/raspberry-gpio/all)
 
