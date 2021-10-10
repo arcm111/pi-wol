@@ -36,6 +36,7 @@ For more information about Pi 2 Model B pins mapping check:
 
 ## Socket Server
 The compiled binary in the server folder when executed will start a UDP Socket server listening on port 5649 for incoming wol requests.  
+### Configuration
 To listen for requests as soon as the Raspberry Pi device has powered on, we need to run the server at startup.  
 One way to do that is to add a command to the end of the `/etx/rc.local` file just before the `exit 0` line:  
 ```console
