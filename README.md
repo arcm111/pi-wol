@@ -17,7 +17,7 @@ Wake up diveces connected to your local network from anywhere using Raspberry Pi
 * GPIO06: Connected to a pull-up resistor and used to check if the board is connected to the device or not.
 
 ## Required Libraries:
-* wiringPi
+* [wiringPi](http://wiringpi.com/download-and-install/)
 * pthread
 
 ## WiringPi Pins Mapping:
@@ -54,7 +54,11 @@ broadcast ip = 192.168.1.255
 A magic packet is a broadcast frame containing 6 bytes of all 255 (`FF FF FF FF FF FF`), followed by 16 repititions of the destination's `MAC` address. The total length of the packet is 102 bytes.  
 For example to send a wol packet to wake up a netword device with `MAC` address of `B0:36:81:C4:C3:9F`, the following magic packet needs to be sent:
 ```
-FF FF FF FF FF FF B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F
+FF FF FF FF FF FF B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F  
+B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F  
+B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F  
+B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F  
+B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F
 ```
 
 ## Web Server
