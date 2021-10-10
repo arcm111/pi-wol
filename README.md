@@ -35,7 +35,8 @@ For more information about Pi 2 Model B pins mapping check:
 [Raspberry Pi 2 Model B Pinout](https://learn.sparkfun.com/tutorials/raspberry-gpio/all)
 
 ## Web Server
-Provides a user interface over the web to send wol requests to Raspberry Pi.
+Provides a user interface over the web to send wol requests to Raspberry Pi.  
+To be able to access the website remotely, port-forwarding settings need to be configured on the router to allow incoming traffic on port 80 to be forwarded to Raspberry Pi.  
 ### Requirements:
 * A running http server such as Apache.
 * A compiled wol-cli binary added to web server directory with the name "wol".
