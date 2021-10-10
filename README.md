@@ -43,7 +43,7 @@ One way to do that is to add a command to the end of the `/etx/rc.local` file ju
 /home/arcm/projects/c/wol-server/server >> /var/log/wol-errors 2>&1 &
 ```
 This command will run the script on startup using `sudo` privilage and save the outputs into a log file saved in `/var/log/wol-errors`.  
-2. To be able to connect to this server remotely, port-forwarding needs to be configured on the router to forward traffic on UDP port 5649 to Raspberry Pi.
+2. To be able to connect to this server remotely, port-forwarding needs to be configured on the router to forward traffic on UDP port 5649 to Raspberry Pi.  
 3. The server needs the broadcast ip for the local network on which Raspberry Pi is connected. The broadcast ip need to be added into the `wol.conf` file:
 ```console
 broadcast ip = 192.168.1.255
