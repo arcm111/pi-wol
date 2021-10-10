@@ -34,6 +34,15 @@ GPIO27 | 2
 For more information about Pi 2 Model B pins mapping check:
 [Raspberry Pi 2 Model B Pinout](https://learn.sparkfun.com/tutorials/raspberry-gpio/all)
 
+## Socket Server
+The compiled binary in the server folder when executed will start a UDP Socket server listening on port 5649 for incoming wol requests.  
+To listen for requests as soon as the Raspberry Pi device has powered on, we need to run the server at startup.  
+One way to do that is to add a command to the end of the `/etx/rc.local` file just before the `exit 0` line:  
+```console
+/home/arcm/projects/c/wol-server/server >> /var/log/wol-errors 2>&1 &
+```
+This command will run the script on startup using `sudo` privilage and save the outputs into a log file saved in `/var/log/wol-errors`.  
+
 ## Web Server
 Provides a user interface over the web to send wol requests to Raspberry Pi.  
 To be able to access the website remotely, port-forwarding settings need to be configured on the router to allow incoming traffic on port 80 to be forwarded to Raspberry Pi.  
