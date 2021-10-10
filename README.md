@@ -10,8 +10,8 @@ Wake up diveces connected to your local network from anywhere using Raspberry Pi
 ## LEDs
 * LED [GPIO22]: Indicates that the operating system has successfully booted up.
 * LED [GPIO04]: Indicates that the internet connection is available.
-* LED [GPIO05]: Indicates that a wol request has been received.
-* LED [GPIO26]: Indicates an error.
+* LED [GPIO05]: Indicates that a wol request has been received or when the operating system has started.
+* LED [GPIO26]: Indicates an error or when the operating system is being powered off.
 
 ## Other Pins
 * GPIO06: Connected to a pull-up resistor and used to check if the board is connected to the device or not.
@@ -35,14 +35,19 @@ For more information about Pi 2 Model B pins mapping check:
 [Raspberry Pi 2 Model B Pinout](https://learn.sparkfun.com/tutorials/raspberry-gpio/all)
 
 ## Socket Server
-The compiled binary in the server folder when executed will start a UDP Socket server listening on port 5649 for incoming wol requests.  
+The compiled binary in the server folder when executed will start a `UDP Socket` server listening on port `5649` for incoming wol requests.  
 ### Configuration
-To listen for requests as soon as the Raspberry Pi device has powered on, we need to run the server at startup.  
+1. To listen for requests as soon as the Raspberry Pi device has powered on, we need to run the server at startup.  
 One way to do that is to add a command to the end of the `/etx/rc.local` file just before the `exit 0` line:  
 ```console
 /home/arcm/projects/c/wol-server/server >> /var/log/wol-errors 2>&1 &
 ```
 This command will run the script on startup using `sudo` privilage and save the outputs into a log file saved in `/var/log/wol-errors`.  
+2. To be able to connect to this server remotely, port-forwarding needs to be configured on the router to forward traffic on UDP port 5649 to Raspberry Pi.
+3. The server needs the broadcast ip for the local network on which Raspberry Pi is connected. The broadcast ip need to be added into the `wol.conf` file:
+```console
+broadcast ip = 192.168.1.255
+```
 
 ## Web Server
 Provides a user interface over the web to send wol requests to Raspberry Pi.  
