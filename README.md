@@ -44,9 +44,17 @@ One way to do that is to add a command to the end of the `/etx/rc.local` file ju
 ```
 This command will run the script on startup using `sudo` privilage and save the outputs into a log file saved in `/var/log/wol-errors`.  
 2. To be able to connect to this server remotely, port-forwarding needs to be configured on the router to forward traffic on UDP port 5649 to Raspberry Pi.  
-3. The server needs the broadcast ip for the local network on which Raspberry Pi is connected. The broadcast ip need to be added into the `wol.conf` file:
+3. The server needs the broadcast ip for the local network on which Raspberry Pi is connected to. The broadcast ip need to be added into the `wol.conf` file. For example:
 ```console
 broadcast ip = 192.168.1.255
+```
+4. To send wol requests, a connection needs to be established first and then a magic packet needs to be sent. Once received the server will forward it to the broadcasting ip found in `wol.conf` which in turn will be forwarded to the destination device matching the `MAC` address found in the packet. Then if the destination device is configured with the wake-on-lan feature enabled, it will boot up.
+
+## Magic Packet
+A magic packet is a broadcast frame containing 6 bytes of all 255 (`FF FF FF FF FF FF`), followed by 16 repititions of the destination's `MAC` address. The total length of the packet is 102 bytes.  
+For example to send a wol packet to wake up a netword device with `MAC` address of `B0:36:81:C4:C3:9F`, the following magic packet needs to be sent:
+```console
+FF FF FF FF FF FF B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F
 ```
 
 ## Web Server

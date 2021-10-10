@@ -21,7 +21,7 @@ void getMacAddress (unsigned char *packet, int packetLength, unsigned char *mac)
 	{
 		for (i = 6, n = 0; i < 12; i++, n++) mac[n] = packet[i];
 	}
-	else printf ("Invalid magic packet");
+	else printf ("Invalid magic packet\n");
 }
 
 void printBytes (unsigned char *bytes, int count, char *title)
