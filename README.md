@@ -1,5 +1,5 @@
 # pi-wol
-Wake up diveces connected to your local network from anywhere using Raspberry Pi.
+Wake up devices connected to your local network from anywhere using Raspberry Pi.
 
 ![circuit diagram](imgs/circuit.svg)
 
