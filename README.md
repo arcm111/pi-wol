@@ -54,11 +54,10 @@ broadcast ip = 192.168.1.255
 A magic packet is a broadcast frame containing 6 bytes of all 255 (`FF FF FF FF FF FF`), followed by 16 repititions of the destination's `MAC` address. The total length of the packet is 102 bytes.  
 For example to send a magic packet to a netword device with a `MAC` address of `B0:36:81:C4:C3:9F`, the following magic packet needs to be sent:
 ```
-FF FF FF FF FF FF B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F  
-B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F  
-B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F  
-B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F  
-B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F
+FF FF FF FF FF FF B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F  
+B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F  
+B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F  
+B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F B0 36 81 C4 C3 9F
 ```
 
 ## Web Server
@@ -67,5 +66,30 @@ To be able to access the website remotely, port-forwarding settings need to be c
 ### Requirements:
 * A running http server such as Apache.
 * A compiled wol-cli binary added to web server directory with the name "wol".
+
+***
+
+### License
+MIT License
+
+Copyright (c) 2021 AR Cheikhmeri
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 
